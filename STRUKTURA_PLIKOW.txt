@@ -1,0 +1,215 @@
+📁 RezerwujKort.pl Clone - Kompletna struktura projektu
+================================================================
+
+frontend/
+├── public/
+│   └── index.html
+│
+├── src/
+│   ├── components/                    # Komponenty główne
+│   │   ├── Navbar.jsx                # ✅ Nawigacja z logo i menu
+│   │   ├── Hero.jsx                  # ✅ Hero section z tłem
+│   │   ├── ProcessSteps.jsx          # ✅ 3 kroki (Załóż, Wyszukaj, Graj)
+│   │   ├── FeaturedCourts.jsx        # ✅ Karty polecanych klubów
+│   │   ├── FeaturedPartners.jsx      # ✅ Karty sparingpartnerów
+│   │   ├── SearchForm.jsx            # ✅ Formularz wyszukiwania
+│   │   ├── PolandMap.jsx             # ✅ Interaktywna mapa Polski SVG
+│   │   ├── NewsSection.jsx           # ✅ Sekcja aktualności
+│   │   ├── Footer.jsx                # ✅ Stopka z linkami
+│   │   │
+│   │   └── ui/                       # Komponenty Shadcn UI
+│   │       ├── accordion.jsx
+│   │       ├── alert.jsx
+│   │       ├── alert-dialog.jsx
+│   │       ├── aspect-ratio.jsx
+│   │       ├── avatar.jsx
+│   │       ├── badge.jsx
+│   │       ├── breadcrumb.jsx
+│   │       ├── button.jsx           # ✅ Używany
+│   │       ├── calendar.jsx
+│   │       ├── card.jsx             # ✅ Używany
+│   │       ├── carousel.jsx
+│   │       ├── checkbox.jsx
+│   │       ├── collapsible.jsx
+│   │       ├── command.jsx
+│   │       ├── context-menu.jsx
+│   │       ├── dialog.jsx
+│   │       ├── drawer.jsx
+│   │       ├── dropdown-menu.jsx
+│   │       ├── form.jsx
+│   │       ├── hover-card.jsx
+│   │       ├── input.jsx            # ✅ Używany
+│   │       ├── input-otp.jsx
+│   │       ├── label.jsx            # ✅ Używany
+│   │       ├── menubar.jsx
+│   │       ├── navigation-menu.jsx
+│   │       ├── pagination.jsx
+│   │       ├── popover.jsx
+│   │       ├── progress.jsx
+│   │       ├── radio-group.jsx
+│   │       ├── resizable.jsx
+│   │       ├── scroll-area.jsx
+│   │       ├── select.jsx           # ✅ Używany
+│   │       ├── separator.jsx
+│   │       ├── sheet.jsx
+│   │       ├── skeleton.jsx
+│   │       ├── slider.jsx
+│   │       ├── sonner.jsx
+│   │       ├── switch.jsx
+│   │       ├── table.jsx
+│   │       ├── tabs.jsx
+│   │       ├── textarea.jsx
+│   │       ├── toast.jsx            # ✅ Używany
+│   │       ├── toaster.jsx          # ✅ Używany
+│   │       ├── toggle.jsx
+│   │       ├── toggle-group.jsx
+│   │       └── tooltip.jsx
+│   │
+│   ├── pages/                        # Strony aplikacji
+│   │   ├── HomePage.jsx              # ✅ Strona główna
+│   │   ├── ClubsListPage.jsx         # ✅ Lista klubów z filtrowaniem
+│   │   ├── ClubDetailsPage.jsx       # ✅ Szczegóły klubu + rezerwacja
+│   │   ├── SparingPartnersPage.jsx   # ✅ Lista sparingpartnerów
+│   │   ├── TournamentsPage.jsx       # ✅ Strona turniejów
+│   │   ├── AboutPage.jsx             # ✅ O nas
+│   │   └── LoginPage.jsx             # ✅ Logowanie/Rejestracja
+│   │
+│   ├── hooks/
+│   │   └── use-toast.js              # ✅ Hook do notyfikacji toast
+│   │
+│   ├── mockData.js                   # ✅ Wszystkie mockowane dane
+│   ├── App.js                        # ✅ Główny komponent + routing
+│   ├── App.css                       # ✅ Style globalne
+│   ├── index.js                      # ✅ Entry point React
+│   └── index.css                     # ✅ Tailwind + zmienne CSS
+│
+├── .env                               # ✅ Zmienne środowiskowe
+├── .gitignore
+├── package.json                       # ✅ Zależności projektu
+├── craco.config.js                    # ✅ Konfiguracja CRACO
+├── tailwind.config.js                 # ✅ Konfiguracja Tailwind
+├── postcss.config.js
+└── README.md
+
+================================================================
+ROUTING (React Router DOM)
+================================================================
+
+/                           → HomePage
+/kluby                      → ClubsListPage
+/kluby?city=Warszawa        → ClubsListPage (filtrowane)
+/kluby?voivodeship=mazowieckie → ClubsListPage (filtrowane)
+/klub/1                     → ClubDetailsPage
+/klub/:id                   → ClubDetailsPage
+/sparingpartnerzy           → SparingPartnersPage
+/sparingpartner/:id         → (możliwe rozszerzenie)
+/turnieje                   → TournamentsPage
+/o-nas                      → AboutPage
+/login                      → LoginPage
+/register                   → LoginPage
+
+================================================================
+MOCK DATA (mockData.js)
+================================================================
+
+• tennisClubs (6 klubów):
+  - WTS DeSki (Warszawa, Mazowieckie)
+  - MKT Łódź (Łódź, Łódzkie)
+  - Wrocław Tenis Club (Wrocław, Dolnośląskie)
+  - Korty Lubliniec (Lubliniec, Śląskie)
+  - Kielce Tennis Center (Kielce, Świętokrzyskie)
+  - Olsztyn Sport (Olsztyn, Warmińsko-mazurskie)
+
+• sparringPartners (4 partnerów):
+  - Tomasz Sosnowski (Warszawa, poziom 4)
+  - Anna Kowalska (Łódź, poziom 3)
+  - Piotr Nowak (Wrocław, poziom 5)
+  - Katarzyna Wiśniewska (Warszawa, poziom 4)
+
+• news (4 aktualności)
+• cities (6 miast)
+• voivodeships (6 województw)
+
+================================================================
+KOLORY PROJEKTU
+================================================================
+
+Główne:
+  --navy-blue: #2C3E50       (nawigacja, nagłówki)
+  --lime-green: #A4C639      (przyciski, akcenty)
+  --darker-green: #8FB82E    (hover przyciski)
+  --dark-bg: #1a252f         (ciemne tła)
+
+Tło:
+  --light-gray: #f9fafb      (sekcje jasne)
+  --white: #ffffff           (karty, formularze)
+
+================================================================
+IKONY (Lucide React)
+================================================================
+
+Używane ikony:
+• Home, Menu, X                    (Navbar)
+• UserPlus, Search, TrendingUp     (ProcessSteps)
+• MapPin, Flag, Phone, Clock       (FeaturedCourts, ClubDetails)
+• Users                            (FeaturedPartners)
+• Calendar, ChevronRight           (NewsSection)
+• Facebook                         (Footer)
+• Trophy, Award                    (Tournaments)
+• Target, Smartphone               (About)
+• Filter                           (ClubsList)
+
+================================================================
+FUNKCJE INTERAKTYWNE
+================================================================
+
+✅ Nawigacja między stronami (React Router)
+✅ Wyszukiwanie klubów (dropdown miasto + klub)
+✅ Filtrowanie klubów (województwo, miasto)
+✅ Kliknięcie na mapę Polski → filtrowanie
+✅ Rezerwacja kortu (wybór daty + godziny)
+✅ Toast notifications (potwierdzenia rezerwacji)
+✅ Hover effects na kartach
+✅ Responsywne menu mobilne
+✅ Smooth scroll
+
+================================================================
+RESPONSYWNOŚĆ
+================================================================
+
+Mobile:   < 768px   (1 kolumna, hamburger menu)
+Tablet:   768-1024px (2 kolumny)
+Desktop:  > 1024px  (3-4 kolumny, pełne menu)
+
+================================================================
+PLIKI KONFIGURACYJNE
+================================================================
+
+package.json:
+• 50+ dependencies
+• Scripts: start, build, test
+• React 19, React Router 7, Tailwind 3
+
+tailwind.config.js:
+• Konfiguracja kolorów Shadcn
+• CSS variables integration
+• Plugin: tailwindcss-animate
+
+craco.config.js:
+• Override CRA config bez eject
+• PostCSS plugins
+
+.env:
+• REACT_APP_BACKEND_URL=http://localhost:8001
+• WDS_SOCKET_PORT=3000
+
+================================================================
+WIELKOŚĆ PROJEKTU
+================================================================
+
+Liczba plików:     ~60 plików
+Liczba komponentów: ~45 komponentów
+Linie kodu:        ~3500 LOC
+Rozmiar bundle:    ~500KB (production build)
+
+================================================================
