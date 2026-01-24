@@ -79,7 +79,7 @@ const AllPagesPage = () => {
         {
           path: '/wspolpraca',
           name: 'Współpraca',
-          description: 'Informacje dla klubów zainteresowanych współpracą',
+          description: 'System dla klubów - rezerwacje, płatności, raporty, aplikacja mobilna',
           icon: Briefcase,
           color: 'bg-orange-500'
         },
