@@ -93,7 +93,7 @@ const AllPagesPage = () => {
         {
           path: '/kontakt',
           name: 'Kontakt',
-          description: 'Skontaktuj się z nami',
+          description: 'Formularz kontaktowy, dane kontaktowe, adres, telefon 660 916 097',
           icon: Mail,
           color: 'bg-red-500'
         },
