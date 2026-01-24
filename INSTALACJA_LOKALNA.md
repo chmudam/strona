@@ -158,6 +158,7 @@ Teraz musisz skopiować wszystkie pliki z listy poniżej. Możesz:
 29. **src/pages/TournamentsPage.jsx**
 30. **src/pages/AboutPage.jsx**
 31. **src/pages/LoginPage.jsx**
+32. **src/pages/AllPagesPage.jsx** ⭐ NOWOŚĆ
 
 ### Hooks (src/hooks/)
 
