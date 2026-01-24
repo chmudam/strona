@@ -10,6 +10,7 @@ import AboutPage from "./pages/AboutPage";
 import AllPagesPage from "./pages/AllPagesPage";
 import CooperationPage from "./pages/CooperationPage";
 import MobileAppPage from "./pages/MobileAppPage";
+import ContactPage from "./pages/ContactPage";
 import { Toaster } from "./components/ui/toaster";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/o-nas" element={<AboutPage />} />
           <Route path="/wspolpraca" element={<CooperationPage />} />
           <Route path="/aplikacja-mobilna" element={<MobileAppPage />} />
+          <Route path="/kontakt" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<LoginPage />} />
           <Route path="/wszystkie" element={<AllPagesPage />} />
