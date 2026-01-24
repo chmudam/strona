@@ -86,7 +86,7 @@ const AllPagesPage = () => {
         {
           path: '/aplikacja-mobilna',
           name: 'Aplikacja mobilna',
-          description: 'Pobierz aplikację na Android i iOS',
+          description: 'Oficjalna aplikacja na Android i iOS - rezerwuj korty z telefonu',
           icon: Smartphone,
           color: 'bg-pink-500'
         },
