@@ -7,6 +7,7 @@ import SparingPartnersPage from "./pages/SparingPartnersPage";
 import LoginPage from "./pages/LoginPage";
 import TournamentsPage from "./pages/TournamentsPage";
 import AboutPage from "./pages/AboutPage";
+import AllPagesPage from "./pages/AllPagesPage";
 import { Toaster } from "./components/ui/toaster";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/o-nas" element={<AboutPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<LoginPage />} />
+          <Route path="/wszystkie" element={<AllPagesPage />} />
         </Routes>
       </BrowserRouter>
       <Toaster />
