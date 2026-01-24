@@ -131,7 +131,7 @@ const AllPagesPage = () => {
         {
           path: '/polityka-cookies',
           name: 'Polityka cookies',
-          description: 'Informacje o plikach cookie',
+          description: 'Informacje o plikach cookie używanych w serwisie',
           icon: FileText,
           color: 'bg-gray-500'
         },
