@@ -129,6 +129,11 @@ const Footer = () => {
                     - Kontakt
                   </Link>
                 </li>
+                <li>
+                  <Link to="/wszystkie" className="hover:text-[#A4C639] transition-colors font-bold">
+                    - Wszystkie
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
