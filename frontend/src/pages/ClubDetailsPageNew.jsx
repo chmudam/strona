@@ -54,105 +54,43 @@ const ClubDetailsPageNew = () => {
   };
 
   const ReservationTable = ({ data }) => {
-    // Group consecutive hours with same status for each court
-    const processCourtHours = (hours) => {
-      const processed = [];
-      let i = 0;
-      
-      while (i < hours.length) {
-        const current = hours[i];
-        let count = 1;
-        
-        // Count consecutive hours with same status
-        while (i + count < hours.length && hours[i + count].hourStatus === current.hourStatus) {
-          count++;
-        }
-        
-        processed.push({
-          ...current,
-          rowspan: count,
-          startHour: current.hourName,
-          endHour: hours[i + count - 1]?.hourName || current.hourName
-        });
-        
-        i += count;
-      }
-      
-      return processed;
-    };
-
-    // Process all courts
-    const processedCourts = data.courts.map(court => ({
-      ...court,
-      processedHours: processCourtHours(court.hours)
-    }));
-
-    // Get all unique hours for row headers
-    const allHours = data.courts[0]?.hours || [];
-
     return (
       <div className="overflow-x-auto">
         <table className="w-full border-collapse">
           <thead>
             <tr className="bg-[#2C3E50]">
-              <th className="border border-gray-300 px-4 py-3 text-left text-white font-bold min-w-[100px]">
+              <th className="border border-gray-300 px-4 py-3 text-left text-white font-bold w-32">
                 Godzina
               </th>
               {data.courts.map((court) => (
-                <th key={court.courtId} className="border border-gray-300 px-4 py-3 text-center text-white font-bold min-w-[150px]">
-                  <div>{court.courtName}</div>
-                  <div className="text-xs font-normal opacity-80">{court.courtDescription}</div>
+                <th key={court.courtId} className="border border-gray-300 px-4 py-3 text-center text-white font-bold">
+                  <div className="text-base">{court.courtName}</div>
+                  <div className="text-xs font-normal opacity-80 mt-1">{court.courtDescription}</div>
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {allHours.map((hour, hourIdx) => {
-              // Check if this hour should be rendered for each court
-              const shouldRender = processedCourts.map(court => {
-                const processedHour = court.processedHours.find(h => h.hourName === hour.hourName);
-                return processedHour;
-              });
-
-              // Skip row if all courts have already rendered this hour in a merged cell
-              const allSkipped = shouldRender.every(h => !h);
-              if (allSkipped) return null;
-
-              return (
-                <tr key={hourIdx} className={hourIdx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                  <td className="border border-gray-300 px-4 py-2 font-semibold text-[#2C3E50] text-sm">
-                    {hour.hourName}
-                  </td>
-                  {processedCourts.map((court, courtIdx) => {
-                    const processedHour = court.processedHours.find(h => h.hourName === hour.hourName);
-                    
-                    if (!processedHour) {
-                      return null; // Cell is part of a merged cell above
-                    }
-
-                    return (
-                      <td
-                        key={courtIdx}
-                        rowSpan={processedHour.rowspan}
-                        className="border border-gray-300 p-2"
+            {data.courts[0]?.hours.map((hour, hourIdx) => (
+              <tr key={hourIdx} className={hourIdx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                <td className="border border-gray-300 px-4 py-3 font-semibold text-[#2C3E50] text-sm h-16">
+                  {hour.hourName}
+                </td>
+                {data.courts.map((court) => {
+                  const courtHour = court.hours[hourIdx];
+                  return (
+                    <td key={court.courtId} className="border border-gray-300 p-2 h-16">
+                      <button
+                        className={`w-full h-12 text-sm font-medium border-2 rounded transition-all ${getStatusColor(courtHour.hourStatus)}`}
+                        disabled={courtHour.hourStatus !== 'OPEN'}
                       >
-                        <button
-                          className={`w-full h-full min-h-[60px] text-sm font-medium border-2 rounded transition-all ${getStatusColor(processedHour.hourStatus)}`}
-                          disabled={processedHour.hourStatus !== 'OPEN'}
-                        >
-                          <div>{getStatusText(processedHour.hourStatus)}</div>
-                          {processedHour.rowspan > 1 && (
-                            <div className="text-xs mt-1 opacity-75">
-                              {processedHour.startHour} - {processedHour.endHour}
-                            </div>
-                          )}
-                        </button>
-                      </td>
-                    );
-                  })}
-                </tr>
-              );
-            })}
+                        {getStatusText(courtHour.hourStatus)}
+                      </button>
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
