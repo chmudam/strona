@@ -88,6 +88,15 @@ const LoginPage = () => {
                     Załóż konto
                   </button>
                 </p>
+                <p className="text-sm text-gray-600 mt-2">
+                  <button
+                    type="button"
+                    onClick={() => navigate('/forgot-password')}
+                    className="text-[#A4C639] hover:text-[#8FB82E] font-semibold underline"
+                  >
+                    Zapomniałeś hasła?
+                  </button>
+                </p>
               </div>
             </form>
 
