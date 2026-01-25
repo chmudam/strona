@@ -6,7 +6,11 @@ import { tennisClubs, courtReservations, clubSparingPartners, clubLeagues } from
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
-import { MapPin, Phone, Mail, Globe, Clock, Trophy, Users, Calendar } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe, Clock, Trophy, Users, Calendar as CalendarIcon, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Calendar } from '../components/ui/calendar';
+import { Popover, PopoverContent, PopoverTrigger } from '../components/ui/popover';
+import { format, addDays, subDays, isAfter, isBefore, startOfDay } from 'date-fns';
+import { pl } from 'date-fns/locale';
 
 const ClubDetailsPageNew = () => {
   const { id } = useParams();
