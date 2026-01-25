@@ -8,11 +8,22 @@ export const tennisClubs = [
     voivodeship: "Mazowieckie",
     city: "Warszawa",
     address: "ul. Sportowa 15, 02-776 Warszawa",
+    phone: "22 123 45 67",
+    email: "kontakt@wtsdeski.pl",
+    website: "www.wtsdeski.pl",
     courts: 6,
     surface: "Kort ziemny",
     indoor: true,
     outdoor: true,
-    image: "https://images.unsplash.com/photo-1622163642998-1ea32b0bbc67?w=400&h=250&fit=crop"
+    image: "https://images.unsplash.com/photo-1622163642998-1ea32b0bbc67?w=400&h=250&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1622163642998-1ea32b0bbc67?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1595435742656-5272d0b3fa82?w=600&h=400&fit=crop"
+    ],
+    description: "Warszawskie Towarzystwo Sportowe DeSki to jeden z najstarszych i najbardziej prestiżowych klubów tenisowych w Warszawie. Oferujemy profesjonalne korty halowe i odkryte, szkółkę tenisa dla dzieci i dorosłych oraz organizujemy turnieje i ligi klubowe.",
+    facilities: ["Szatnie", "Prysznice", "Parking", "Sklep tenisowy", "Kawiarnia", "WiFi"],
+    openingHours: "Pn-Nd: 7:00 - 23:00"
   },
   {
     id: 2,
