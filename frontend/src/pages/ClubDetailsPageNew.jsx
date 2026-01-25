@@ -54,6 +54,45 @@ const ClubDetailsPageNew = () => {
   };
 
   const ReservationTable = ({ data }) => {
+    // Process each court to merge consecutive same status (except OPEN)
+    const processedCourts = data.courts.map(court => {
+      const processed = [];
+      let i = 0;
+      
+      while (i < court.hours.length) {
+        const current = court.hours[i];
+        let count = 1;
+        
+        // Only merge if NOT OPEN status
+        if (current.hourStatus !== 'OPEN') {
+          while (
+            i + count < court.hours.length && 
+            court.hours[i + count].hourStatus === current.hourStatus
+          ) {
+            count++;
+          }
+        }
+        
+        processed.push({
+          ...current,
+          rowspan: count,
+          skip: false
+        });
+        
+        // Mark next items as skip
+        for (let j = 1; j < count; j++) {
+          processed.push({
+            ...court.hours[i + j],
+            skip: true
+          });
+        }
+        
+        i += count;
+      }
+      
+      return { ...court, processedHours: processed };
+    });
+
     return (
       <div className="overflow-x-auto">
         <table className="w-full border-collapse">
@@ -76,15 +115,36 @@ const ClubDetailsPageNew = () => {
                 <td className="border border-gray-300 px-4 py-3 font-semibold text-[#2C3E50] text-sm h-16">
                   {hour.hourName}
                 </td>
-                {data.courts.map((court) => {
-                  const courtHour = court.hours[hourIdx];
+                {processedCourts.map((court) => {
+                  const processedHour = court.processedHours[hourIdx];
+                  
+                  // Skip cells that are part of merged cell above
+                  if (processedHour.skip) {
+                    return null;
+                  }
+                  
+                  const height = processedHour.rowspan > 1 
+                    ? `${processedHour.rowspan * 64}px` 
+                    : '48px';
+                  
                   return (
-                    <td key={court.courtId} className="border border-gray-300 p-2 h-16">
+                    <td 
+                      key={court.courtId} 
+                      className="border border-gray-300 p-2"
+                      rowSpan={processedHour.rowspan}
+                      style={{ height: processedHour.rowspan > 1 ? `${processedHour.rowspan * 64}px` : '64px' }}
+                    >
                       <button
-                        className={`w-full h-12 text-sm font-medium border-2 rounded transition-all ${getStatusColor(courtHour.hourStatus)}`}
-                        disabled={courtHour.hourStatus !== 'OPEN'}
+                        className={`w-full text-sm font-medium border-2 rounded transition-all ${getStatusColor(processedHour.hourStatus)}`}
+                        style={{ height: height }}
+                        disabled={processedHour.hourStatus !== 'OPEN'}
                       >
-                        {getStatusText(courtHour.hourStatus)}
+                        <div>{getStatusText(processedHour.hourStatus)}</div>
+                        {processedHour.rowspan > 1 && (
+                          <div className="text-xs mt-1 opacity-75">
+                            {processedHour.hourName} - {court.processedHours[hourIdx + processedHour.rowspan - 1]?.hourName}
+                          </div>
+                        )}
                       </button>
                     </td>
                   );
