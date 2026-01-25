@@ -183,6 +183,65 @@ const ClubDetailsPageNew = () => {
     );
   };
 
+  const DateNavigator = () => {
+    return (
+      <div className="bg-white border-2 border-gray-200 rounded-lg p-4 mb-6">
+        <div className="flex items-center justify-between flex-wrap gap-4">
+          <div className="flex items-center space-x-4">
+            <Button
+              onClick={handlePreviousDay}
+              disabled={isBefore(subDays(selectedDate, 1), today)}
+              variant="outline"
+              className="border-2 border-[#2C3E50] hover:bg-[#2C3E50] hover:text-white disabled:opacity-30"
+            >
+              <ChevronLeft size={20} />
+              <span className="ml-2">Poprzedni dzień</span>
+            </Button>
+            
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="border-2 border-[#A4C639] hover:bg-[#A4C639] hover:text-white min-w-[250px] justify-start text-left font-semibold"
+                >
+                  <CalendarIcon className="mr-2 h-5 w-5" />
+                  <div>
+                    <div className="text-base">{format(selectedDate, 'dd.MM.yyyy', { locale: pl })}</div>
+                    <div className="text-xs opacity-80">{getDayName(selectedDate)}</div>
+                  </div>
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0" align="start">
+                <Calendar
+                  mode="single"
+                  selected={selectedDate}
+                  onSelect={(date) => date && setSelectedDate(date)}
+                  disabled={(date) => isBefore(date, today) || isAfter(date, maxDate)}
+                  initialFocus
+                  locale={pl}
+                />
+              </PopoverContent>
+            </Popover>
+
+            <Button
+              onClick={handleNextDay}
+              disabled={isAfter(addDays(selectedDate, 1), maxDate)}
+              variant="outline"
+              className="border-2 border-[#2C3E50] hover:bg-[#2C3E50] hover:text-white disabled:opacity-30"
+            >
+              <span className="mr-2">Następny dzień</span>
+              <ChevronRight size={20} />
+            </Button>
+          </div>
+          
+          <div className="text-sm text-gray-600">
+            Możesz rezerwować do: <span className="font-semibold">{format(maxDate, 'dd.MM.yyyy')}</span>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
