@@ -7,6 +7,10 @@ import SparingPartnersPage from "./pages/SparingPartnersPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import ProfileDataPage from "./pages/ProfileDataPage";
+import EditProfilePage from "./pages/EditProfilePage";
+import ChangePasswordPage from "./pages/ChangePasswordPage";
+import DeleteAccountPage from "./pages/DeleteAccountPage";
 import TournamentsPage from "./pages/TournamentsPage";
 import AboutPage from "./pages/AboutPage";
 import AllPagesPage from "./pages/AllPagesPage";
@@ -34,6 +38,10 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="/profil/dane" element={<ProfileDataPage />} />
+          <Route path="/profil/edytuj" element={<EditProfilePage />} />
+          <Route path="/profil/zmien-haslo" element={<ChangePasswordPage />} />
+          <Route path="/profil/usun-konto" element={<DeleteAccountPage />} />
           <Route path="/wszystkie" element={<AllPagesPage />} />
         </Routes>
       </BrowserRouter>
