@@ -412,13 +412,9 @@ const ClubDetailsPageNew = () => {
                       <h2 className="text-2xl font-bold text-[#2C3E50]">{club.fullName}</h2>
                       <p className="text-gray-600">{club.phone} • {club.email}</p>
                     </div>
-                    <div className="text-right">
-                      <p className="text-lg font-semibold text-[#2C3E50]">
-                        {courtReservations.tennis.dateOfWeek}
-                      </p>
-                      <p className="text-gray-600">{courtReservations.tennis.date}</p>
-                    </div>
                   </div>
+                  
+                  <DateNavigator />
                   
                   <div className="mb-6">
                     <h3 className="text-lg font-semibold text-[#2C3E50] mb-4">Legenda:</h3>
@@ -452,13 +448,9 @@ const ClubDetailsPageNew = () => {
                       <h2 className="text-2xl font-bold text-[#2C3E50]">{club.fullName} - Padel</h2>
                       <p className="text-gray-600">{club.phone} • {club.email}</p>
                     </div>
-                    <div className="text-right">
-                      <p className="text-lg font-semibold text-[#2C3E50]">
-                        {courtReservations.padel.dateOfWeek}
-                      </p>
-                      <p className="text-gray-600">{courtReservations.padel.date}</p>
-                    </div>
                   </div>
+
+                  <DateNavigator />
 
                   <div className="mb-6">
                     <h3 className="text-lg font-semibold text-[#2C3E50] mb-4">Legenda:</h3>
