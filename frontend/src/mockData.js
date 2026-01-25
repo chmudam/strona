@@ -175,3 +175,223 @@ export const voivodeships = [
   { id: "swietokrzyskie", name: "Świętokrzyskie", cities: ["Kielce"] },
   { id: "warminsko-mazurskie", name: "Warmińsko-mazurskie", cities: ["Olsztyn"] }
 ];
+
+// Court reservations data
+export const courtReservations = {
+  tennis: {
+    date: "2026-01-25",
+    dateOfWeek: "Niedziela",
+    courts: [
+      {
+        courtId: 1,
+        courtName: "Kort hala 1",
+        courtDescription: "Hala",
+        onlineReservation: true,
+        hours: [
+          { hourId: 0, hourName: "00:00", hourStatus: "OPEN" },
+          { hourId: 2, hourName: "01:00", hourStatus: "OPEN" },
+          { hourId: 4, hourName: "02:00", hourStatus: "OPEN" },
+          { hourId: 6, hourName: "03:00", hourStatus: "OPEN" },
+          { hourId: 8, hourName: "04:00", hourStatus: "OPEN" },
+          { hourId: 10, hourName: "05:00", hourStatus: "OPEN" },
+          { hourId: 12, hourName: "06:00", hourStatus: "OPEN" },
+          { hourId: 14, hourName: "07:00", hourStatus: "OPEN" },
+          { hourId: 16, hourName: "08:00", hourStatus: "OPEN" },
+          { hourId: 18, hourName: "09:00", hourStatus: "RESERVATION" },
+          { hourId: 20, hourName: "10:00", hourStatus: "RESERVATION" },
+          { hourId: 22, hourName: "11:00", hourStatus: "RESERVATION" },
+          { hourId: 24, hourName: "12:00", hourStatus: "RESERVATION" },
+          { hourId: 26, hourName: "13:00", hourStatus: "RESERVATION" },
+          { hourId: 28, hourName: "14:00", hourStatus: "RESERVATION" },
+          { hourId: 30, hourName: "15:00", hourStatus: "RESERVATION" },
+          { hourId: 32, hourName: "16:00", hourStatus: "RESERVATION" },
+          { hourId: 34, hourName: "17:00", hourStatus: "RESERVATION" },
+          { hourId: 36, hourName: "18:00", hourStatus: "RESERVATION" },
+          { hourId: 38, hourName: "19:00", hourStatus: "RESERVATION" },
+          { hourId: 40, hourName: "20:00", hourStatus: "RESERVATION" },
+          { hourId: 42, hourName: "21:00", hourStatus: "OPEN" },
+          { hourId: 44, hourName: "22:00", hourStatus: "OPEN" },
+          { hourId: 46, hourName: "23:00", hourStatus: "OPEN" },
+          { hourId: 48, hourName: "24:00", hourStatus: "CLOSE" }
+        ]
+      },
+      {
+        courtId: 2,
+        courtName: "Kort hala 2",
+        courtDescription: "Hala",
+        onlineReservation: true,
+        hours: [
+          { hourId: 0, hourName: "00:00", hourStatus: "OPEN" },
+          { hourId: 2, hourName: "01:00", hourStatus: "OPEN" },
+          { hourId: 4, hourName: "02:00", hourStatus: "OPEN" },
+          { hourId: 6, hourName: "03:00", hourStatus: "OPEN" },
+          { hourId: 8, hourName: "04:00", hourStatus: "OPEN" },
+          { hourId: 10, hourName: "05:00", hourStatus: "OPEN" },
+          { hourId: 12, hourName: "06:00", hourStatus: "OPEN" },
+          { hourId: 14, hourName: "07:00", hourStatus: "OPEN" },
+          { hourId: 16, hourName: "08:00", hourStatus: "RESERVATION" },
+          { hourId: 18, hourName: "09:00", hourStatus: "RESERVATION" },
+          { hourId: 20, hourName: "10:00", hourStatus: "RESERVATION" },
+          { hourId: 22, hourName: "11:00", hourStatus: "RESERVATION" },
+          { hourId: 24, hourName: "12:00", hourStatus: "RESERVATION" },
+          { hourId: 26, hourName: "13:00", hourStatus: "RESERVATION" },
+          { hourId: 28, hourName: "14:00", hourStatus: "RESERVATION" },
+          { hourId: 30, hourName: "15:00", hourStatus: "RESERVATION" },
+          { hourId: 32, hourName: "16:00", hourStatus: "RESERVATION" },
+          { hourId: 34, hourName: "17:00", hourStatus: "RESERVATION" },
+          { hourId: 36, hourName: "18:00", hourStatus: "RESERVATION" },
+          { hourId: 38, hourName: "19:00", hourStatus: "RESERVATION" },
+          { hourId: 40, hourName: "20:00", hourStatus: "RESERVATION" },
+          { hourId: 42, hourName: "21:00", hourStatus: "OPEN" },
+          { hourId: 44, hourName: "22:00", hourStatus: "OPEN" },
+          { hourId: 46, hourName: "23:00", hourStatus: "OPEN" },
+          { hourId: 48, hourName: "24:00", hourStatus: "CLOSE" }
+        ]
+      },
+      {
+        courtId: 5,
+        courtName: "Kort 5",
+        courtDescription: "Odkryte/Balon",
+        onlineReservation: true,
+        hours: [
+          { hourId: 0, hourName: "00:00", hourStatus: "OPEN" },
+          { hourId: 2, hourName: "01:00", hourStatus: "OPEN" },
+          { hourId: 4, hourName: "02:00", hourStatus: "OPEN" },
+          { hourId: 6, hourName: "03:00", hourStatus: "OPEN" },
+          { hourId: 8, hourName: "04:00", hourStatus: "OPEN" },
+          { hourId: 10, hourName: "05:00", hourStatus: "OPEN" },
+          { hourId: 12, hourName: "06:00", hourStatus: "OPEN" },
+          { hourId: 14, hourName: "07:00", hourStatus: "OPEN" },
+          { hourId: 16, hourName: "08:00", hourStatus: "RESERVATION" },
+          { hourId: 18, hourName: "09:00", hourStatus: "RESERVATION" },
+          { hourId: 20, hourName: "10:00", hourStatus: "OPEN" },
+          { hourId: 22, hourName: "11:00", hourStatus: "RESERVATION" },
+          { hourId: 24, hourName: "12:00", hourStatus: "RESERVATION" },
+          { hourId: 26, hourName: "13:00", hourStatus: "RESERVATION" },
+          { hourId: 28, hourName: "14:00", hourStatus: "RESERVATION" },
+          { hourId: 30, hourName: "15:00", hourStatus: "OPEN" },
+          { hourId: 32, hourName: "16:00", hourStatus: "OPEN" },
+          { hourId: 34, hourName: "17:00", hourStatus: "RESERVATION" },
+          { hourId: 36, hourName: "18:00", hourStatus: "RESERVATION" },
+          { hourId: 38, hourName: "19:00", hourStatus: "RESERVATION" },
+          { hourId: 40, hourName: "20:00", hourStatus: "OPEN" },
+          { hourId: 42, hourName: "21:00", hourStatus: "OPEN" },
+          { hourId: 44, hourName: "22:00", hourStatus: "OPEN" },
+          { hourId: 46, hourName: "23:00", hourStatus: "OPEN" },
+          { hourId: 48, hourName: "24:00", hourStatus: "CLOSE" }
+        ]
+      }
+    ]
+  },
+  padel: {
+    date: "2026-01-25",
+    dateOfWeek: "Niedziela",
+    courts: [
+      {
+        courtId: 1,
+        courtName: "Kort Padel 1",
+        courtDescription: "Padel indoor",
+        onlineReservation: true,
+        hours: [
+          { hourId: 16, hourName: "08:00", hourStatus: "OPEN" },
+          { hourId: 18, hourName: "09:00", hourStatus: "RESERVATION" },
+          { hourId: 20, hourName: "10:00", hourStatus: "RESERVATION" },
+          { hourId: 22, hourName: "11:00", hourStatus: "RESERVATION" },
+          { hourId: 24, hourName: "12:00", hourStatus: "RESERVATION" },
+          { hourId: 26, hourName: "13:00", hourStatus: "RESERVATION" },
+          { hourId: 28, hourName: "14:00", hourStatus: "OPEN" },
+          { hourId: 30, hourName: "15:00", hourStatus: "OPEN" },
+          { hourId: 32, hourName: "16:00", hourStatus: "RESERVATION" },
+          { hourId: 34, hourName: "17:00", hourStatus: "RESERVATION" },
+          { hourId: 36, hourName: "18:00", hourStatus: "RESERVATION" },
+          { hourId: 38, hourName: "19:00", hourStatus: "RESERVATION" },
+          { hourId: 40, hourName: "20:00", hourStatus: "OPEN" },
+          { hourId: 42, hourName: "21:00", hourStatus: "OPEN" },
+          { hourId: 44, hourName: "22:00", hourStatus: "CLOSE" }
+        ]
+      },
+      {
+        courtId: 2,
+        courtName: "Kort Padel 2",
+        courtDescription: "Padel indoor",
+        onlineReservation: true,
+        hours: [
+          { hourId: 16, hourName: "08:00", hourStatus: "RESERVATION" },
+          { hourId: 18, hourName: "09:00", hourStatus: "RESERVATION" },
+          { hourId: 20, hourName: "10:00", hourStatus: "RESERVATION" },
+          { hourId: 22, hourName: "11:00", hourStatus: "OPEN" },
+          { hourId: 24, hourName: "12:00", hourStatus: "OPEN" },
+          { hourId: 26, hourName: "13:00", hourStatus: "RESERVATION" },
+          { hourId: 28, hourName: "14:00", hourStatus: "RESERVATION" },
+          { hourId: 30, hourName: "15:00", hourStatus: "RESERVATION" },
+          { hourId: 32, hourName: "16:00", hourStatus: "RESERVATION" },
+          { hourId: 34, hourName: "17:00", hourStatus: "RESERVATION" },
+          { hourId: 36, hourName: "18:00", hourStatus: "OPEN" },
+          { hourId: 38, hourName: "19:00", hourStatus: "OPEN" },
+          { hourId: 40, hourName: "20:00", hourStatus: "RESERVATION" },
+          { hourId: 42, hourName: "21:00", hourStatus: "OPEN" },
+          { hourId: 44, hourName: "22:00", hourStatus: "CLOSE" }
+        ]
+      }
+    ]
+  }
+};
+
+// Club sparring partners
+export const clubSparingPartners = [
+  {
+    id: 1,
+    name: "Jan Kowalski",
+    level: 4,
+    availability: "Poniedziałki, Środy 18:00-20:00",
+    phone: "600 111 222",
+    description: "Szukam regularnego partnera do gry, poziom zaawansowany."
+  },
+  {
+    id: 2,
+    name: "Maria Nowak",
+    level: 3,
+    availability: "Weekendy rano",
+    phone: "601 222 333",
+    description: "Gram rekreacyjnie, chętnie pogram z osobami na podobnym poziomie."
+  },
+  {
+    id: 3,
+    name: "Piotr Zalewski",
+    level: 5,
+    availability: "Wtorki, Czwartki po 17:00",
+    phone: "602 333 444",
+    description: "Gracz turniejowy szuka sparingpartnera na poziomie 4-5."
+  }
+];
+
+// Club leagues
+export const clubLeagues = [
+  {
+    id: 1,
+    name: "Liga Klubowa Letnia 2025",
+    startDate: "2025-06-01",
+    endDate: "2025-08-31",
+    participants: 24,
+    status: "Zapisy otwarte",
+    description: "Coroczna liga klubowa dla wszystkich członków. Gra systemem każdy z każdym."
+  },
+  {
+    id: 2,
+    name: "Turniej Deblowy",
+    startDate: "2025-07-15",
+    endDate: "2025-07-16",
+    participants: 16,
+    status: "Zapisy otwarte",
+    description: "Weekend z deblem - turniej par dla graczy na poziomie 3-5."
+  },
+  {
+    id: 3,
+    name: "Liga Zimowa 2024/2025",
+    startDate: "2024-12-01",
+    endDate: "2025-02-28",
+    participants: 32,
+    status: "W trakcie",
+    description: "Liga zimowa na kortach halowych. Pozostało 6 kolejek."
+  }
+];
