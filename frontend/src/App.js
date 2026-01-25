@@ -5,6 +5,8 @@ import ClubsListPage from "./pages/ClubsListPage";
 import ClubDetailsPageNew from "./pages/ClubDetailsPageNew";
 import SparingPartnersPage from "./pages/SparingPartnersPage";
 import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import TournamentsPage from "./pages/TournamentsPage";
 import AboutPage from "./pages/AboutPage";
 import AllPagesPage from "./pages/AllPagesPage";
@@ -30,7 +32,8 @@ function App() {
           <Route path="/kontakt" element={<ContactPage />} />
           <Route path="/polityka-cookies" element={<CookiePolicyPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
           <Route path="/wszystkie" element={<AllPagesPage />} />
         </Routes>
       </BrowserRouter>
