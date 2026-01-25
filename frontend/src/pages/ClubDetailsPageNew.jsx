@@ -15,7 +15,29 @@ import { pl } from 'date-fns/locale';
 const ClubDetailsPageNew = () => {
   const { id } = useParams();
   const club = tennisClubs.find(c => c.id === parseInt(id));
-  const [selectedDate, setSelectedDate] = useState('2026-01-25');
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  
+  const today = startOfDay(new Date());
+  const maxDate = addDays(today, 14);
+  
+  const handlePreviousDay = () => {
+    const newDate = subDays(selectedDate, 1);
+    if (!isBefore(newDate, today)) {
+      setSelectedDate(newDate);
+    }
+  };
+  
+  const handleNextDay = () => {
+    const newDate = addDays(selectedDate, 1);
+    if (!isAfter(newDate, maxDate)) {
+      setSelectedDate(newDate);
+    }
+  };
+  
+  const getDayName = (date) => {
+    const days = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'];
+    return days[date.getDay()];
+  };
 
   if (!club) {
     return (
