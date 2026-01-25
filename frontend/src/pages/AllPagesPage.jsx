@@ -116,6 +116,41 @@ const AllPagesPage = () => {
           icon: UserPlus,
           color: 'bg-lime-500'
         },
+        {
+          path: '/forgot-password',
+          name: 'Przypomnij hasło',
+          description: 'Resetuj hasło do konta',
+          icon: Mail,
+          color: 'bg-amber-500'
+        },
+        {
+          path: '/profil/dane',
+          name: 'Twoje dane',
+          description: 'Wyświetl dane osobowe (wymaga logowania)',
+          icon: Users,
+          color: 'bg-blue-500'
+        },
+        {
+          path: '/profil/edytuj',
+          name: 'Edytuj profil',
+          description: 'Zmień swoje dane osobowe',
+          icon: Users,
+          color: 'bg-indigo-500'
+        },
+        {
+          path: '/profil/zmien-haslo',
+          name: 'Zmiana hasła',
+          description: 'Zaktualizuj swoje hasło',
+          icon: Users,
+          color: 'bg-purple-500'
+        },
+        {
+          path: '/profil/usun-konto',
+          name: 'Usuń konto',
+          description: 'Trwale usuń swoje konto',
+          icon: Users,
+          color: 'bg-red-500'
+        },
       ]
     },
     {
