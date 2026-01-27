@@ -365,6 +365,193 @@ export const clubSparingPartners = [
   }
 ];
 
+// User reservations (for "Moje rezerwacje" page)
+export const userReservations = [
+  {
+    id: 1,
+    clubId: 1,
+    clubName: "WTS DeSki",
+    date: "2025-11-30",
+    dayOfWeek: "Niedziela",
+    timeStart: "09:30",
+    timeEnd: "10:30",
+    court: "Kort 2",
+    price: 100,
+    currency: "zł",
+    status: "confirmed_pay_at_club", // confirmed_pay_at_club, paid
+    createdAt: "2025-11-30 01:44:58"
+  },
+  {
+    id: 2,
+    clubId: 1,
+    clubName: "WTS DeSki",
+    date: "2025-11-30",
+    dayOfWeek: "Niedziela",
+    timeStart: "10:00",
+    timeEnd: "11:00",
+    court: "Kort 1",
+    price: 100,
+    currency: "zł",
+    status: "confirmed_pay_at_club",
+    createdAt: "2025-11-30 01:42:20"
+  },
+  {
+    id: 3,
+    clubId: 1,
+    clubName: "WTS DeSki",
+    date: "2025-11-30",
+    dayOfWeek: "Niedziela",
+    timeStart: "08:30",
+    timeEnd: "09:00",
+    court: "Kort 2",
+    price: 50,
+    currency: "zł",
+    status: "confirmed_pay_at_club",
+    createdAt: "2025-11-30 01:37:28"
+  },
+  {
+    id: 4,
+    clubId: 1,
+    clubName: "WTS DeSki",
+    date: "2025-11-10",
+    dayOfWeek: "Poniedziałek",
+    timeStart: "11:30",
+    timeEnd: "12:30",
+    court: "Kort 1",
+    price: 100,
+    currency: "zł",
+    status: "paid",
+    createdAt: "2025-11-10 01:08:01"
+  },
+  {
+    id: 5,
+    clubId: 1,
+    clubName: "WTS DeSki",
+    date: "2025-11-08",
+    dayOfWeek: "Sobota",
+    timeStart: "16:00",
+    timeEnd: "17:00",
+    court: "Kort 1",
+    price: 85,
+    currency: "zł",
+    status: "paid",
+    createdAt: "2025-11-07 22:42:57"
+  },
+  {
+    id: 6,
+    clubId: 2,
+    clubName: "MKT Łódź",
+    date: "2025-12-05",
+    dayOfWeek: "Piątek",
+    timeStart: "18:00",
+    timeEnd: "19:00",
+    court: "Kort 2",
+    price: 80,
+    currency: "zł",
+    status: "confirmed_pay_at_club",
+    createdAt: "2025-12-01 10:15:33"
+  },
+  {
+    id: 7,
+    clubId: 3,
+    clubName: "Wrocław Tenis Club",
+    date: "2025-12-15",
+    dayOfWeek: "Poniedziałek",
+    timeStart: "14:00",
+    timeEnd: "15:30",
+    court: "Kort 3",
+    price: 120,
+    currency: "zł",
+    status: "paid",
+    createdAt: "2025-12-10 14:22:45"
+  },
+  {
+    id: 8,
+    clubId: 1,
+    clubName: "WTS DeSki",
+    date: "2025-10-25",
+    dayOfWeek: "Sobota",
+    timeStart: "10:00",
+    timeEnd: "11:00",
+    court: "Kort 1",
+    price: 90,
+    currency: "zł",
+    status: "paid",
+    createdAt: "2025-10-20 08:30:12"
+  },
+  {
+    id: 9,
+    clubId: 2,
+    clubName: "MKT Łódź",
+    date: "2025-10-12",
+    dayOfWeek: "Niedziela",
+    timeStart: "09:00",
+    timeEnd: "10:00",
+    court: "Kort 1",
+    price: 70,
+    currency: "zł",
+    status: "paid",
+    createdAt: "2025-10-10 16:45:22"
+  },
+  {
+    id: 10,
+    clubId: 1,
+    clubName: "WTS DeSki",
+    date: "2025-09-18",
+    dayOfWeek: "Czwartek",
+    timeStart: "17:00",
+    timeEnd: "18:00",
+    court: "Kort 2",
+    price: 95,
+    currency: "zł",
+    status: "paid",
+    createdAt: "2025-09-15 11:20:08"
+  },
+  // Future reservations
+  {
+    id: 11,
+    clubId: 1,
+    clubName: "WTS DeSki",
+    date: "2026-02-15",
+    dayOfWeek: "Niedziela",
+    timeStart: "10:00",
+    timeEnd: "11:00",
+    court: "Kort 1",
+    price: 100,
+    currency: "zł",
+    status: "confirmed_pay_at_club",
+    createdAt: "2026-01-20 09:15:00"
+  },
+  {
+    id: 12,
+    clubId: 2,
+    clubName: "MKT Łódź",
+    date: "2026-02-20",
+    dayOfWeek: "Piątek",
+    timeStart: "18:00",
+    timeEnd: "19:30",
+    court: "Kort 2",
+    price: 110,
+    currency: "zł",
+    status: "paid",
+    createdAt: "2026-01-18 14:30:00"
+  },
+  {
+    id: 13,
+    clubId: 3,
+    clubName: "Wrocław Tenis Club",
+    date: "2026-03-05",
+    dayOfWeek: "Czwartek",
+    timeStart: "16:00",
+    timeEnd: "17:00",
+    court: "Kort 1",
+    price: 90,
+    currency: "zł",
+    status: "confirmed_pay_at_club",
+    createdAt: "2026-01-25 11:45:00"
+  }
+];
+
 // Club leagues
 export const clubLeagues = [
   {
