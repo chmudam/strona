@@ -365,6 +365,34 @@ export const clubSparingPartners = [
   }
 ];
 
+// User profile data (for "Start" page)
+export const userProfile = {
+  firstName: "Damian",
+  lastName: "Chmurzyński",
+  phone: "507",
+  phoneVerified: true,
+  email: "damian987@op.pl"
+};
+
+// User applications (for "Start" page)
+export const userApplications = [
+  {
+    id: 1,
+    name: "Aplikacja Szkółki tenisowe"
+  },
+  {
+    id: 2,
+    name: "Rezerwacje Warszawskie_Towarzystwo_Sportowe_DeSki"
+  },
+  {
+    id: 3,
+    name: "Rezerwacje Akademia_Tenisa_OXFORD"
+  }
+];
+
+// User favorite tennis clubs (for "Start" page)
+export const userFavoriteClubs = [];
+
 // User passes/subscriptions (for "Karnety" page)
 export const userPasses = [
   {
