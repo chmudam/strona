@@ -6,10 +6,10 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative h-[600px] overflow-hidden">
+    <div className="relative h-[520px] overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-top bg-no-repeat"
         style={{
           backgroundImage: 'url(/assets/images/hero-bg.png)',
         }}
