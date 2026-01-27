@@ -131,6 +131,13 @@ const AllPagesPage = () => {
           color: 'bg-blue-500'
         },
         {
+          path: '/profil/start',
+          name: 'Start',
+          description: 'Strona startowa profilu - dane, rezerwacje, aplikacje, ulubione ośrodki',
+          icon: User,
+          color: 'bg-slate-600'
+        },
+        {
           path: '/profil/rezerwacje',
           name: 'Moje rezerwacje',
           description: 'Przeglądaj aktualne i historyczne rezerwacje kortów',
