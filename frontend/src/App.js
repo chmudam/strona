@@ -45,6 +45,7 @@ function App() {
           <Route path="/profil/zmien-haslo" element={<ChangePasswordPage />} />
           <Route path="/profil/usun-konto" element={<DeleteAccountPage />} />
           <Route path="/profil/rezerwacje" element={<MyReservationsPage />} />
+          <Route path="/profil/karnety" element={<PassesPage />} />
           <Route path="/wszystkie" element={<AllPagesPage />} />
         </Routes>
       </BrowserRouter>
