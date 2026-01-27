@@ -7,24 +7,33 @@ const Hero = () => {
 
   return (
     <div className="relative h-[600px] overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=1600&h=900&fit=crop)',
+          backgroundImage: 'url(/assets/images/hero-bg.png)',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1a252f]/95 via-[#2C3E50]/90 to-[#2C3E50]/80"></div>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
       {/* Content */}
       <div className="relative h-full flex flex-col items-center justify-center text-center px-4 max-w-6xl mx-auto">
-        <h1 className="text-white text-5xl md:text-7xl font-bold mb-6 tracking-wide">
-          PROSTO <span className="text-[#A4C639]">DO CELU</span>
-        </h1>
-        <p className="text-white text-xl md:text-2xl mb-8 font-light tracking-wide">
-          OŚRODKI TENISOWE, SPARINGPARTNERZY
-        </p>
+        {/* Main Title with semi-transparent background */}
+        <div className="bg-black/50 px-8 py-4 mb-8">
+          <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold tracking-wider">
+            PROSTO <span className="text-white font-extrabold">DO CELU</span>
+          </h1>
+        </div>
+        
+        {/* Subtitle with semi-transparent background */}
+        <div className="bg-black/50 px-6 py-3 mb-10">
+          <p className="text-white text-lg md:text-xl lg:text-2xl font-medium tracking-widest uppercase">
+            KLUBY SPORTOWE, SPARINGPARTNERZY
+          </p>
+        </div>
+
         <Button
           onClick={() => navigate('/login')}
           className="bg-[#A4C639] hover:bg-[#8FB82E] text-white font-bold uppercase px-10 py-6 text-lg rounded shadow-2xl transform hover:scale-105 transition-all duration-200"
