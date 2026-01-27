@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Home, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [homeHovered, setHomeHovered] = useState(false);
+  const [loginHovered, setLoginHovered] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -12,29 +14,43 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 hover:opacity-90 transition-opacity">
-            <div className="relative">
-              <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="25" cy="10" r="3" fill="#A4C639" />
-                <ellipse cx="25" cy="35" rx="15" ry="10" fill="#A4C639" opacity="0.3" />
-                <path d="M20 15 L25 35 L30 15" stroke="#A4C639" strokeWidth="2" fill="none" />
-                <path d="M15 20 L35 20" stroke="#A4C639" strokeWidth="1.5" />
-                <path d="M17 25 L33 25" stroke="#A4C639" strokeWidth="1.5" />
-              </svg>
+          <Link to="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
+            <div className="w-12 h-12">
+              <img 
+                src="/assets/images/logo.png" 
+                alt="Rezerwujkort Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
             <div className="flex flex-col">
-              <span className="text-white text-xl font-bold tracking-wide">REZERWUJKORT</span>
-              <span className="text-[#A4C639] text-xs tracking-wider">system rezerwacji online</span>
+              <h1 className="text-white text-2xl md:text-3xl font-bold tracking-tight leading-none uppercase">
+                Rezerwujkort
+              </h1>
+              <span className="text-[#97c93c] text-xs md:text-sm font-medium uppercase tracking-wider">
+                system rezerwacji online
+              </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
+            {/* Home Icon Button */}
             <Link
               to="/"
-              className="px-4 py-2 text-white hover:text-[#A4C639] transition-colors duration-200 flex items-center space-x-2"
+              className="px-3 py-2 transition-all duration-200"
+              onMouseEnter={() => setHomeHovered(true)}
+              onMouseLeave={() => setHomeHovered(false)}
             >
-              <Home size={18} />
+              <img 
+                src="/assets/images/home.png" 
+                alt="Home"
+                className={`w-10 h-10 object-contain transition-all duration-200 ${
+                  homeHovered ? 'brightness-125 scale-110' : 'brightness-100'
+                }`}
+                style={{
+                  filter: homeHovered ? 'brightness(1.3) saturate(1.2)' : 'brightness(1)'
+                }}
+              />
             </Link>
             <Link
               to="/sparingpartnerzy"
@@ -60,12 +76,24 @@ const Navbar = () => {
             >
               O nas
             </Link>
-            <Button
+            {/* Login Button with Image */}
+            <button
               onClick={() => navigate('/login')}
-              className="ml-4 bg-[#A4C639] hover:bg-[#8FB82E] text-white font-bold uppercase px-6 py-2 rounded shadow-lg transition-all duration-200"
+              className="ml-4 transition-all duration-200"
+              onMouseEnter={() => setLoginHovered(true)}
+              onMouseLeave={() => setLoginHovered(false)}
             >
-              Zaloguj się
-            </Button>
+              <img 
+                src="/assets/images/button-login.png" 
+                alt="Zaloguj się"
+                className={`h-10 object-contain transition-all duration-200 ${
+                  loginHovered ? 'brightness-110 scale-105' : 'brightness-100'
+                }`}
+                style={{
+                  filter: loginHovered ? 'brightness(1.2) saturate(1.1)' : 'brightness(1)'
+                }}
+              />
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -85,8 +113,13 @@ const Navbar = () => {
             <Link
               to="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-4 py-2 text-white hover:bg-[#2C3E50] rounded transition-colors"
+              className="flex items-center gap-3 px-4 py-2 text-white hover:bg-[#2C3E50] rounded transition-colors"
             >
+              <img 
+                src="/assets/images/home.png" 
+                alt="Home"
+                className="w-6 h-6 object-contain"
+              />
               Strona główna
             </Link>
             <Link
