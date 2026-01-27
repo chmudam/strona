@@ -5,8 +5,6 @@ import { Button } from './ui/button';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [homeHovered, setHomeHovered] = useState(false);
-  const [loginHovered, setLoginHovered] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -34,24 +32,12 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            {/* Home Icon Button */}
+            {/* Home Icon Button - Sprite */}
             <Link
               to="/"
-              className="px-3 py-2 transition-all duration-200"
-              onMouseEnter={() => setHomeHovered(true)}
-              onMouseLeave={() => setHomeHovered(false)}
-            >
-              <img 
-                src="/assets/images/home.png" 
-                alt="Home"
-                className={`w-10 h-10 object-contain transition-all duration-200 ${
-                  homeHovered ? 'brightness-125 scale-110' : 'brightness-100'
-                }`}
-                style={{
-                  filter: homeHovered ? 'brightness(1.3) saturate(1.2)' : 'brightness(1)'
-                }}
-              />
-            </Link>
+              className="home-icon"
+              aria-label="Strona główna"
+            />
             <Link
               to="/sparingpartnerzy"
               className="px-4 py-2 text-white hover:text-[#A4C639] transition-colors duration-200 uppercase text-sm font-medium"
@@ -76,23 +62,13 @@ const Navbar = () => {
             >
               O nas
             </Link>
-            {/* Login Button with Image */}
+            {/* Login Button - Sprite */}
             <button
               onClick={() => navigate('/login')}
-              className="ml-4 transition-all duration-200"
-              onMouseEnter={() => setLoginHovered(true)}
-              onMouseLeave={() => setLoginHovered(false)}
+              className="login-button ml-4"
+              aria-label="Zaloguj się"
             >
-              <img 
-                src="/assets/images/button-login.png" 
-                alt="Zaloguj się"
-                className={`h-10 object-contain transition-all duration-200 ${
-                  loginHovered ? 'brightness-110 scale-105' : 'brightness-100'
-                }`}
-                style={{
-                  filter: loginHovered ? 'brightness(1.2) saturate(1.1)' : 'brightness(1)'
-                }}
-              />
+              Zaloguj się
             </button>
           </div>
 
@@ -115,11 +91,7 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-3 px-4 py-2 text-white hover:bg-[#2C3E50] rounded transition-colors"
             >
-              <img 
-                src="/assets/images/home.png" 
-                alt="Home"
-                className="w-6 h-6 object-contain"
-              />
+              <div className="home-icon-small" />
               Strona główna
             </Link>
             <Link
@@ -162,6 +134,47 @@ const Navbar = () => {
           </div>
         </div>
       )}
+
+      {/* Styles for sprite icons */}
+      <style>{`
+        .home-icon {
+          width: 50px;
+          height: 50px;
+          background: url('/assets/images/home.png') no-repeat 0 0;
+          background-size: 50px auto;
+          cursor: pointer;
+          display: block;
+        }
+        .home-icon:hover {
+          background-position: 0 -50px;
+        }
+        
+        .home-icon-small {
+          width: 24px;
+          height: 24px;
+          background: url('/assets/images/home.png') no-repeat 0 0;
+          background-size: 24px auto;
+        }
+        
+        .login-button {
+          width: 260px;
+          height: 62px;
+          background-image: url('/assets/images/button-login.png');
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          background-size: 260px auto;
+          background-color: transparent;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          display: block;
+          outline: none;
+          text-indent: -9999px;
+        }
+        .login-button:hover {
+          background-position: 0 -62px;
+        }
+      `}</style>
     </nav>
   );
 };
