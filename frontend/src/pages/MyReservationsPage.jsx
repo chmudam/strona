@@ -12,12 +12,11 @@ const MyReservationsPage = () => {
   const [currentPageCurrent, setCurrentPageCurrent] = useState(1);
   const [currentPageHistory, setCurrentPageHistory] = useState(1);
 
-  // Get today's date for comparison
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
   // Split reservations into current (future/today) and historical (past)
   const { currentReservations, historicalReservations } = useMemo(() => {
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+    
     const current = [];
     const historical = [];
 
@@ -25,7 +24,7 @@ const MyReservationsPage = () => {
       const reservationDate = new Date(reservation.date);
       reservationDate.setHours(0, 0, 0, 0);
       
-      if (reservationDate >= today) {
+      if (reservationDate >= now) {
         current.push(reservation);
       } else {
         historical.push(reservation);
