@@ -101,3 +101,80 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Dodaj do projektu w zakładce Wszystkie stone moje rezerwacje bazując na przesłanym zdjęciu. Podziel stronę na dwie sekcje: aktualne rezerwacje i historyczne rezerwacje."
+
+backend:
+  - task: "No backend changes required"
+    implemented: true
+    working: "NA"
+    file: "N/A"
+    stuck_count: 0
+    priority: "low"
+    needs_retesting: false
+
+frontend:
+  - task: "Create MyReservationsPage with current and historical sections"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/MyReservationsPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Created new page with table layout matching provided screenshot, split into 'Aktualne rezerwacje' and 'Historyczne rezerwacje' sections"
+  
+  - task: "Add mock user reservations data"
+    implemented: true
+    working: true
+    file: "frontend/src/mockData.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added userReservations array with sample data matching screenshot structure"
+  
+  - task: "Add route for MyReservationsPage"
+    implemented: true
+    working: true
+    file: "frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added route /profil/rezerwacje for MyReservationsPage"
+  
+  - task: "Add link in AllPagesPage"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/AllPagesPage.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added 'Moje rezerwacje' link in 'Użytkownik' category"
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "MyReservationsPage functionality"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Implemented MyReservationsPage with two sections (current and historical reservations). Build successful, local curl returns 200. Preview unavailable due to infrastructure issue."
