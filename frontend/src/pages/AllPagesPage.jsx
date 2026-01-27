@@ -131,6 +131,13 @@ const AllPagesPage = () => {
           color: 'bg-blue-500'
         },
         {
+          path: '/profil/rezerwacje',
+          name: 'Moje rezerwacje',
+          description: 'Przeglądaj aktualne i historyczne rezerwacje kortów',
+          icon: CalendarCheck,
+          color: 'bg-green-600'
+        },
+        {
           path: '/profil/edytuj',
           name: 'Edytuj profil',
           description: 'Zmień swoje dane osobowe',
