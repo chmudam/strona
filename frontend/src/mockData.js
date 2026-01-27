@@ -365,6 +365,49 @@ export const clubSparingPartners = [
   }
 ];
 
+// User announcements (for "Moje ogłoszenia" page)
+export const userAnnouncements = [
+  {
+    id: 1,
+    name: "Damian",
+    city: "Warszawa",
+    discipline: "TENIS",
+    playingVenue: "WTS DeSki",
+    clubId: 1,
+    description: "Szukam regularnego partnera do gry w tenisa. Gram na poziomie średniozaawansowanym, preferuję grę w weekendy rano lub wieczorem w dni powszednie.",
+    preferredTimes: "Weekendy: 8:00-12:00, Pn-Pt: 18:00-21:00",
+    phone: "507 123 456",
+    skillLevel: 3,
+    photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=Damian"
+  },
+  {
+    id: 2,
+    name: "Damian",
+    city: "Łódź",
+    discipline: "PADEL",
+    playingVenue: "MKT Łódź",
+    clubId: 2,
+    description: "Nowy w padelu, szukam kogoś cierpliwego do nauki i wspólnej gry. Mogę grać głównie w weekendy.",
+    preferredTimes: "Soboty i niedziele, elastyczne godziny",
+    phone: "507 123 456",
+    skillLevel: 1,
+    photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=Damian"
+  },
+  {
+    id: 3,
+    name: "Damian",
+    city: "Wrocław",
+    discipline: "TENIS",
+    playingVenue: "Wrocław Tenis Club",
+    clubId: 3,
+    description: "Zaawansowany gracz, szukam sparingpartnera na podobnym poziomie. Regularnie gram 2-3 razy w tygodniu.",
+    preferredTimes: "Wtorki, czwartki 17:00-19:00",
+    phone: "507 123 456",
+    skillLevel: 4,
+    photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=Damian"
+  }
+];
+
 // User profile data (for "Start" page)
 export const userProfile = {
   firstName: "Damian",
