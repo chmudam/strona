@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Link } from 'react-router-dom';
-import { Home, Users, Building2, Trophy, Info, LogIn, UserPlus, MapPin, FileText, Smartphone, Briefcase, Mail, List, CalendarCheck, CreditCard } from 'lucide-react';
+import { Home, Users, Building2, Trophy, Info, LogIn, UserPlus, MapPin, FileText, Smartphone, Briefcase, Mail, List, CalendarCheck, CreditCard, User } from 'lucide-react';
 
 const AllPagesPage = () => {
   const pages = [
