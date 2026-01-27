@@ -18,6 +18,7 @@ import CooperationPage from "./pages/CooperationPage";
 import MobileAppPage from "./pages/MobileAppPage";
 import ContactPage from "./pages/ContactPage";
 import CookiePolicyPage from "./pages/CookiePolicyPage";
+import MyReservationsPage from "./pages/MyReservationsPage";
 import { Toaster } from "./components/ui/toaster";
 
 function App() {
