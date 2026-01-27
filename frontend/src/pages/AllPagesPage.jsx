@@ -45,6 +45,13 @@ const AllPagesPage = () => {
           icon: PlusCircle,
           color: 'bg-emerald-500'
         },
+        {
+          path: '/moje-ogloszenia',
+          name: 'Moje ogłoszenia',
+          description: 'Zarządzaj swoimi ogłoszeniami sparingpartnerów',
+          icon: Users,
+          color: 'bg-violet-500'
+        },
       ]
     },
     {
