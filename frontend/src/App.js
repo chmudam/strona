@@ -43,6 +43,7 @@ function App() {
           <Route path="/profil/edytuj" element={<EditProfilePage />} />
           <Route path="/profil/zmien-haslo" element={<ChangePasswordPage />} />
           <Route path="/profil/usun-konto" element={<DeleteAccountPage />} />
+          <Route path="/profil/rezerwacje" element={<MyReservationsPage />} />
           <Route path="/wszystkie" element={<AllPagesPage />} />
         </Routes>
       </BrowserRouter>
