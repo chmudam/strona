@@ -51,6 +51,7 @@ function App() {
           <Route path="/profil/karnety" element={<PassesPage />} />
           <Route path="/profil/start" element={<StartPage />} />
           <Route path="/dodaj-ogloszenie" element={<AddAnnouncementPage />} />
+          <Route path="/moje-ogloszenia" element={<MyAnnouncementsPage />} />
           <Route path="/wszystkie" element={<AllPagesPage />} />
         </Routes>
       </BrowserRouter>
