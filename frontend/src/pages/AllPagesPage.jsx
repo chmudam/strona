@@ -38,6 +38,13 @@ const AllPagesPage = () => {
           icon: Trophy,
           color: 'bg-yellow-500'
         },
+        {
+          path: '/dodaj-ogloszenie',
+          name: 'Dodaj ogłoszenie',
+          description: 'Dodaj ogłoszenie i znajdź partnera do gry',
+          icon: PlusCircle,
+          color: 'bg-emerald-500'
+        },
       ]
     },
     {
