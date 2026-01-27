@@ -126,6 +126,18 @@ frontend:
         agent: "main"
         comment: "Created new page with table layout matching provided screenshot, split into 'Aktualne rezerwacje' and 'Historyczne rezerwacje' sections"
   
+  - task: "Create PassesPage (Karnety)"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/PassesPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Created Karnety page with table showing club, pass info, and 'Doładuj karnet' button"
+  
   - task: "Add mock user reservations data"
     implemented: true
     working: true
@@ -136,9 +148,9 @@ frontend:
     status_history:
       - working: true
         agent: "main"
-        comment: "Added userReservations array with sample data matching screenshot structure"
+        comment: "Added userReservations and userPasses arrays with sample data"
   
-  - task: "Add route for MyReservationsPage"
+  - task: "Add routes for MyReservationsPage and PassesPage"
     implemented: true
     working: true
     file: "frontend/src/App.js"
@@ -148,9 +160,9 @@ frontend:
     status_history:
       - working: true
         agent: "main"
-        comment: "Added route /profil/rezerwacje for MyReservationsPage"
+        comment: "Added routes /profil/rezerwacje and /profil/karnety"
   
-  - task: "Add link in AllPagesPage"
+  - task: "Add links in AllPagesPage"
     implemented: true
     working: true
     file: "frontend/src/pages/AllPagesPage.jsx"
@@ -160,7 +172,7 @@ frontend:
     status_history:
       - working: true
         agent: "main"
-        comment: "Added 'Moje rezerwacje' link in 'Użytkownik' category"
+        comment: "Added 'Moje rezerwacje' and 'Karnety' links in 'Użytkownik' category"
 
 metadata:
   created_by: "main_agent"
