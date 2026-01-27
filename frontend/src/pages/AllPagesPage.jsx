@@ -138,6 +138,13 @@ const AllPagesPage = () => {
           color: 'bg-green-600'
         },
         {
+          path: '/profil/karnety',
+          name: 'Karnety',
+          description: 'Przeglądaj swoje karnety i doładowuj je',
+          icon: CreditCard,
+          color: 'bg-yellow-600'
+        },
+        {
           path: '/profil/edytuj',
           name: 'Edytuj profil',
           description: 'Zmień swoje dane osobowe',
