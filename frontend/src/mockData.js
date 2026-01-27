@@ -365,6 +365,60 @@ export const clubSparingPartners = [
   }
 ];
 
+// User passes/subscriptions (for "Karnety" page)
+export const userPasses = [
+  {
+    id: 1,
+    clubId: 1,
+    clubName: "WTS DeSki",
+    passValue: 500,
+    availableFunds: 500,
+    scheduledReservations: 0,
+    historicalReservations: 0,
+    currency: "zł"
+  },
+  {
+    id: 2,
+    clubId: 1,
+    clubName: "WTS DeSki",
+    passValue: 90,
+    availableFunds: 90,
+    scheduledReservations: 0,
+    historicalReservations: 0,
+    currency: "zł"
+  },
+  {
+    id: 3,
+    clubId: 2,
+    clubName: "MKT Łódź",
+    passValue: 416.16,
+    availableFunds: 288,
+    scheduledReservations: 0,
+    historicalReservations: 1,
+    currency: "zł"
+  },
+  {
+    id: 4,
+    clubId: 3,
+    clubName: "Wrocław Tenis Club",
+    passValue: 246,
+    availableFunds: 246,
+    scheduledReservations: 0,
+    historicalReservations: 0,
+    currency: "zł"
+  },
+  {
+    id: 5,
+    clubId: 4,
+    clubName: "Korty Lubliniec",
+    passValue: 150,
+    availableFunds: 75,
+    scheduledReservations: 2,
+    historicalReservations: 3,
+    currency: "zł"
+  }
+];
+
 // User reservations (for "Moje rezerwacje" page)
 export const userReservations = [
   {
