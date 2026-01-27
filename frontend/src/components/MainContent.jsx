@@ -8,7 +8,7 @@ const MainContent = () => {
   
   // Get first 2 clubs and 2 sparring partners
   const featuredClubs = tennisClubs.slice(0, 2);
-  const featuredPartners = sparingPartners.slice(0, 2);
+  const featuredPartners = sparringPartners.slice(0, 2);
 
   const handleSearch = (e) => {
     e.preventDefault();
