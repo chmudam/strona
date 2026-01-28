@@ -20,6 +20,11 @@ $red-600: #dc2626;
   width: 100%;
   top: 0;
   z-index: 50;
+  transition: transform 0.3s ease;
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
 }
 
 .navbar-container {
