@@ -1,0 +1,122 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-content">
+      <!-- Logo -->
+      <a routerLink="/" class="logo-link">
+        <div class="logo-image">
+          <img src="/assets/images/logo.png" alt="Rezerwujkort Logo" />
+        </div>
+        <div class="logo-text">
+          <h1 class="logo-title">Rezerwujkort</h1>
+          <span class="logo-subtitle">system rezerwacji online</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="desktop-nav">
+        <!-- Home Icon -->
+        <a routerLink="/" class="home-icon" aria-label="Strona główna"></a>
+        
+        <a routerLink="/sparingpartnerzy" class="nav-link">Sparingpartnerzy</a>
+        <a routerLink="/kluby" class="nav-link">Kluby</a>
+        <a routerLink="/turnieje" class="nav-link">Turnieje</a>
+        <a routerLink="/o-nas" class="nav-link">O nas</a>
+
+        <!-- Profil Dropdown -->
+        <div class="dropdown-container">
+          <button class="profile-button">
+            Profil
+            <svg class="chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div class="dropdown-menu">
+            <!-- Profil z podmenu -->
+            <div class="profile-submenu-container">
+              <button class="submenu-trigger" (click)="toggleProfileSub()">
+                <span>Profil</span>
+                <svg class="chevron-icon" [class.rotated]="profileSubOpen" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              
+              <!-- Podmenu Profil -->
+              <div class="profile-submenu" [class.open]="profileSubOpen">
+                <a routerLink="/profil/dane" class="submenu-link">Twoje dane</a>
+                <a routerLink="/profil/edytuj" class="submenu-link">Edytuj profil</a>
+                <a routerLink="/profil/zmiana-hasla" class="submenu-link">Zmiana hasła</a>
+                <a routerLink="/profil/usun-konto" class="submenu-link">Usuń konto</a>
+              </div>
+            </div>
+
+            <a routerLink="/profil/rezerwacje" class="dropdown-link">Rezerwacje</a>
+            <a routerLink="/profil/karnety" class="dropdown-link">Karnety</a>
+            <a routerLink="/moje-ogloszenia" class="dropdown-link">Sparingpartnerzy</a>
+
+            <!-- Wyloguj -->
+            <div class="logout-container">
+              <button class="logout-button" (click)="handleLogout()">
+                <svg class="logout-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                </svg>
+                Wyloguj
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button class="mobile-menu-button" (click)="toggleMobileMenu()">
+        <svg *ngIf="!mobileMenuOpen" class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg *ngIf="mobileMenuOpen" class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" *ngIf="mobileMenuOpen">
+    <div class="mobile-menu-content">
+      <a routerLink="/" class="mobile-link" (click)="closeMobileMenu()">
+        <div class="home-icon-small"></div>
+        Strona główna
+      </a>
+      <a routerLink="/sparingpartnerzy" class="mobile-link" (click)="closeMobileMenu()">Sparingpartnerzy</a>
+      <a routerLink="/kluby" class="mobile-link" (click)="closeMobileMenu()">Kluby</a>
+      <a routerLink="/turnieje" class="mobile-link" (click)="closeMobileMenu()">Turnieje</a>
+      <a routerLink="/o-nas" class="mobile-link" (click)="closeMobileMenu()">O nas</a>
+
+      <!-- Mobile Profil Menu -->
+      <div class="mobile-profile-section">
+        <button class="mobile-profile-trigger" (click)="toggleMobileProfile()">
+          Profil
+          <svg class="chevron-icon" [class.rotated]="mobileProfileOpen" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+
+        <div class="mobile-profile-menu" *ngIf="mobileProfileOpen">
+          <a routerLink="/profil/dane" class="mobile-submenu-link" (click)="closeMobileMenu()">Twoje dane</a>
+          <a routerLink="/profil/edytuj" class="mobile-submenu-link" (click)="closeMobileMenu()">Edytuj profil</a>
+          <a routerLink="/profil/zmiana-hasla" class="mobile-submenu-link" (click)="closeMobileMenu()">Zmiana hasła</a>
+          <a routerLink="/profil/usun-konto" class="mobile-submenu-link" (click)="closeMobileMenu()">Usuń konto</a>
+          <a routerLink="/profil/rezerwacje" class="mobile-submenu-link" (click)="closeMobileMenu()">Rezerwacje</a>
+          <a routerLink="/profil/karnety" class="mobile-submenu-link" (click)="closeMobileMenu()">Karnety</a>
+          <a routerLink="/moje-ogloszenia" class="mobile-submenu-link" (click)="closeMobileMenu()">Sparingpartnerzy</a>
+          <button class="mobile-logout-button" (click)="handleLogout()">
+            <svg class="logout-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+            </svg>
+            Wyloguj
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
