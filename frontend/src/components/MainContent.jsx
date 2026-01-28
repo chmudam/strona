@@ -135,8 +135,8 @@ const MainContent = () => {
                     >
                       <option value="">-- Wybierz województwo --</option>
                       {voivodeships.map((voivodeship) => (
-                        <option key={voivodeship} value={voivodeship}>
-                          {voivodeship}
+                        <option key={voivodeship.id} value={voivodeship.id}>
+                          {voivodeship.name}
                         </option>
                       ))}
                     </select>
@@ -154,8 +154,8 @@ const MainContent = () => {
                     >
                       <option value="">-- Wybierz miasto --</option>
                       {cities.map((city) => (
-                        <option key={city} value={city}>
-                          {city}
+                        <option key={city.name} value={city.name}>
+                          {city.name}
                         </option>
                       ))}
                     </select>
