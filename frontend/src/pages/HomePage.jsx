@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import MainContent from '../components/MainContent';
+import NewsSection from '../components/NewsSection';
 import Footer from '../components/Footer';
 
 const HomePage = () => {
@@ -11,6 +12,7 @@ const HomePage = () => {
       <div className="pt-20">
         <Hero />
         <MainContent />
+        <NewsSection />
       </div>
       <Footer />
     </div>
