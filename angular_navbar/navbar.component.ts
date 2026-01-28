@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -13,6 +13,25 @@ export class NavbarComponent {
   mobileMenuOpen = false;
   mobileProfileOpen = false;
   profileSubOpen = false;
+  
+  // Hide on scroll
+  visible = true;
+  lastScrollY = 0;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY > this.lastScrollY && currentScrollY > 80) {
+      // Scrolling down - hide navbar
+      this.visible = false;
+    } else {
+      // Scrolling up - show navbar
+      this.visible = true;
+    }
+    
+    this.lastScrollY = currentScrollY;
+  }
 
   toggleMobileMenu(): void {
     this.mobileMenuOpen = !this.mobileMenuOpen;
