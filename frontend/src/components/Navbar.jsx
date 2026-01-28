@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileProfileOpen, setMobileProfileOpen] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -62,14 +63,71 @@ const Navbar = () => {
             >
               O nas
             </Link>
-            {/* Login Button - Sprite */}
-            <button
-              onClick={() => navigate('/login')}
-              className="login-button ml-4"
-              aria-label="Zaloguj się"
-            >
-              Zaloguj się
-            </button>
+            
+            {/* Profil Dropdown */}
+            <div className="relative ml-4 dropdown-container">
+              <button className="flex items-center gap-1 bg-[#A4C639] hover:bg-[#8FB82E] text-white font-semibold py-2 px-4 rounded transition-colors uppercase text-sm">
+                Profil
+                <ChevronDown size={16} />
+              </button>
+              
+              {/* Dropdown Menu */}
+              <div className="dropdown-menu absolute right-0 top-full mt-0 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible transition-all duration-200 z-50">
+                {/* Profil z podmenu */}
+                <div className="dropdown-item-container relative">
+                  <div className="flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-gray-100 cursor-pointer rounded-t-lg">
+                    <span className="font-medium">Profil</span>
+                    <ChevronDown size={14} className="transform -rotate-90" />
+                  </div>
+                  {/* Podmenu Profil */}
+                  <div className="submenu absolute left-full top-0 ml-0 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible transition-all duration-200">
+                    <Link
+                      to="/profil/dane"
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#A4C639] rounded-t-lg"
+                    >
+                      Twoje dane
+                    </Link>
+                    <Link
+                      to="/profil/edytuj"
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#A4C639]"
+                    >
+                      Edytuj profil
+                    </Link>
+                    <Link
+                      to="/profil/zmiana-hasla"
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#A4C639]"
+                    >
+                      Zmiana hasła
+                    </Link>
+                    <Link
+                      to="/profil/usun-konto"
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#A4C639] rounded-b-lg"
+                    >
+                      Usuń konto
+                    </Link>
+                  </div>
+                </div>
+                
+                <Link
+                  to="/profil/rezerwacje"
+                  className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#A4C639] font-medium"
+                >
+                  Rezerwacje
+                </Link>
+                <Link
+                  to="/profil/karnety"
+                  className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#A4C639] font-medium"
+                >
+                  Karnety
+                </Link>
+                <Link
+                  to="/moje-ogloszenia"
+                  className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#A4C639] font-medium rounded-b-lg"
+                >
+                  Sparingpartnerzy
+                </Link>
+              </div>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -122,20 +180,76 @@ const Navbar = () => {
             >
               O nas
             </Link>
-            <Button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                navigate('/login');
-              }}
-              className="w-full bg-[#A4C639] hover:bg-[#8FB82E] text-white font-bold uppercase mt-2"
-            >
-              Zaloguj się
-            </Button>
+            
+            {/* Mobile Profil Menu */}
+            <div className="border-t border-[#4A5F7F] pt-2 mt-2">
+              <button
+                onClick={() => setMobileProfileOpen(!mobileProfileOpen)}
+                className="w-full flex items-center justify-between px-4 py-2 text-white hover:bg-[#2C3E50] rounded transition-colors uppercase text-sm font-semibold"
+              >
+                Profil
+                <ChevronDown size={16} className={`transform transition-transform ${mobileProfileOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {mobileProfileOpen && (
+                <div className="ml-4 space-y-1 mt-1">
+                  <Link
+                    to="/profil/dane"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-4 py-2 text-gray-300 hover:bg-[#2C3E50] hover:text-white rounded transition-colors text-sm"
+                  >
+                    Twoje dane
+                  </Link>
+                  <Link
+                    to="/profil/edytuj"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-4 py-2 text-gray-300 hover:bg-[#2C3E50] hover:text-white rounded transition-colors text-sm"
+                  >
+                    Edytuj profil
+                  </Link>
+                  <Link
+                    to="/profil/zmiana-hasla"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-4 py-2 text-gray-300 hover:bg-[#2C3E50] hover:text-white rounded transition-colors text-sm"
+                  >
+                    Zmiana hasła
+                  </Link>
+                  <Link
+                    to="/profil/usun-konto"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-4 py-2 text-gray-300 hover:bg-[#2C3E50] hover:text-white rounded transition-colors text-sm"
+                  >
+                    Usuń konto
+                  </Link>
+                  <Link
+                    to="/profil/rezerwacje"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-4 py-2 text-gray-300 hover:bg-[#2C3E50] hover:text-white rounded transition-colors text-sm"
+                  >
+                    Rezerwacje
+                  </Link>
+                  <Link
+                    to="/profil/karnety"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-4 py-2 text-gray-300 hover:bg-[#2C3E50] hover:text-white rounded transition-colors text-sm"
+                  >
+                    Karnety
+                  </Link>
+                  <Link
+                    to="/moje-ogloszenia"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-4 py-2 text-gray-300 hover:bg-[#2C3E50] hover:text-white rounded transition-colors text-sm"
+                  >
+                    Sparingpartnerzy
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}
 
-      {/* Styles for sprite icons */}
+      {/* Styles for sprite icons and dropdown */}
       <style>{`
         .home-icon {
           width: 50px;
@@ -156,23 +270,29 @@ const Navbar = () => {
           background-size: 24px auto;
         }
         
-        .login-button {
-          width: 260px;
-          height: 62px;
-          background-image: url('/assets/images/button-login.png');
-          background-repeat: no-repeat;
-          background-position: 0 0;
-          background-size: 260px auto;
-          background-color: transparent;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          display: block;
-          outline: none;
-          text-indent: -9999px;
+        /* Dropdown styles */
+        .dropdown-container:hover .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
         }
-        .login-button:hover {
-          background-position: 0 -62px;
+        
+        .dropdown-item-container:hover .submenu {
+          opacity: 1;
+          visibility: visible;
+        }
+        
+        .dropdown-menu {
+          padding-top: 8px;
+        }
+        
+        .dropdown-menu::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 8px;
+          background: transparent;
         }
       `}</style>
     </nav>
