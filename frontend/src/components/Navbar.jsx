@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, LogOut } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileProfileOpen, setMobileProfileOpen] = useState(false);
+  const [profileSubOpen, setProfileSubOpen] = useState(false);
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Demo logout
+    navigate('/');
+  };
 
   return (
     <nav className="bg-[#2C3E50] shadow-lg fixed w-full top-0 z-50">
@@ -73,35 +79,38 @@ const Navbar = () => {
               
               {/* Dropdown Menu */}
               <div className="dropdown-menu absolute right-0 top-full mt-0 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible transition-all duration-200 z-50">
-                {/* Profil z podmenu */}
-                <div className="dropdown-item-container relative">
-                  <div className="flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-gray-100 cursor-pointer rounded-t-lg">
-                    <span className="font-medium">Profil</span>
-                    <ChevronDown size={14} className="transform -rotate-90" />
-                  </div>
-                  {/* Podmenu Profil */}
-                  <div className="submenu absolute left-full top-0 ml-0 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible transition-all duration-200">
+                {/* Profil z podmenu - klikalne */}
+                <div className="profile-submenu-container">
+                  <button 
+                    className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-gray-100 cursor-pointer rounded-t-lg font-medium"
+                    onClick={() => setProfileSubOpen(!profileSubOpen)}
+                  >
+                    <span>Profil</span>
+                    <ChevronDown size={14} className={`transform transition-transform ${profileSubOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  {/* Podmenu Profil - rozwija się w dół */}
+                  <div className={`overflow-hidden transition-all duration-300 ${profileSubOpen ? 'max-h-48' : 'max-h-0'}`}>
                     <Link
                       to="/profil/dane"
-                      className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#A4C639] rounded-t-lg"
+                      className="block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-[#A4C639] text-sm"
                     >
                       Twoje dane
                     </Link>
                     <Link
                       to="/profil/edytuj"
-                      className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#A4C639]"
+                      className="block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-[#A4C639] text-sm"
                     >
                       Edytuj profil
                     </Link>
                     <Link
                       to="/profil/zmiana-hasla"
-                      className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#A4C639]"
+                      className="block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-[#A4C639] text-sm"
                     >
                       Zmiana hasła
                     </Link>
                     <Link
                       to="/profil/usun-konto"
-                      className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#A4C639] rounded-b-lg"
+                      className="block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-[#A4C639] text-sm"
                     >
                       Usuń konto
                     </Link>
@@ -122,10 +131,21 @@ const Navbar = () => {
                 </Link>
                 <Link
                   to="/moje-ogloszenia"
-                  className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#A4C639] font-medium rounded-b-lg"
+                  className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#A4C639] font-medium"
                 >
                   Sparingpartnerzy
                 </Link>
+                
+                {/* Wyloguj - czerwony przycisk */}
+                <div className="border-t border-gray-200 mt-2 pt-2 px-3 pb-3">
+                  <button
+                    onClick={handleLogout}
+                    className="w-full flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded transition-colors"
+                  >
+                    <LogOut size={16} />
+                    Wyloguj
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -242,6 +262,16 @@ const Navbar = () => {
                   >
                     Sparingpartnerzy
                   </Link>
+                  <button
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      handleLogout();
+                    }}
+                    className="w-full flex items-center gap-2 px-4 py-2 text-red-400 hover:bg-red-500 hover:text-white rounded transition-colors text-sm font-semibold mt-2"
+                  >
+                    <LogOut size={16} />
+                    Wyloguj
+                  </button>
                 </div>
               )}
             </div>
@@ -272,11 +302,6 @@ const Navbar = () => {
         
         /* Dropdown styles */
         .dropdown-container:hover .dropdown-menu {
-          opacity: 1;
-          visibility: visible;
-        }
-        
-        .dropdown-item-container:hover .submenu {
           opacity: 1;
           visibility: visible;
         }
